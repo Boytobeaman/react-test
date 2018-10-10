@@ -27,7 +27,7 @@ export function user(state = initState, action) {
         case LOAD_DATA:
             return { ...state, ...action.payload, isAuth: true }
         case LOGOUT:
-            return { ...initState, redirectTo: `${config.APP_NAME}/login` }
+            return { ...initState,isAuth: false, redirectTo: `${config.APP_NAME}/login` }
         default:
             return state
     }

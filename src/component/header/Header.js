@@ -11,9 +11,9 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter} from 'react-router-dom'
+import { logoutSubmit } from '../../redux/user.redux';
 
-import { withRouter } from 'react-router-dom'
 import logo from './logo.svg';
 import { connect } from 'react-redux';
 import { config } from '../../config/config';
@@ -21,6 +21,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.state = {
       isOpen: false
     };
@@ -29,6 +30,10 @@ class Header extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+  handleLogout(){
+    this.props.logoutSubmit();
+    this.props.history.push(`${config.APP_NAME}/login`);
   }
   render() {
     return (
@@ -57,7 +62,7 @@ class Header extends Component {
                 {this.props.user.user}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem onClick={() => this.props.history.push(`${config.APP_NAME}/login`)}>
+                  <DropdownItem onClick={this.handleLogout}>
                     Logout
                   </DropdownItem>
                 </DropdownMenu>
@@ -72,5 +77,8 @@ class Header extends Component {
 
 
 export default connect(
-  state => state, null
+  state => state,
+  {
+    logoutSubmit
+  }
 )(Header);

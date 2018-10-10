@@ -18,7 +18,7 @@ class Dashboard extends Component {
             <div className="App">
                 <Header history={this.props.history}/>
                 <div className="page-content p-1">
-                  test
+                  Dashboard content
                 </div>
             </div>
         );

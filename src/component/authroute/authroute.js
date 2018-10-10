@@ -11,6 +11,7 @@ class AuthRoute extends React.Component {
         if (publicList.indexOf(pathname) > -1 || this.props.user.isAuth) {
             return null
         }
+        debugger;
         if(!this.props.user.isAuth){
             axios.get(`${config.API_URL}${config.APP_NAME}/user/info`)
             .then(res => {
@@ -33,7 +34,9 @@ class AuthRoute extends React.Component {
                     this.props.history.push(`${config.APP_NAME}/login`);
                 }
             });
-        }  
+        }else{
+            this.props.history.push(`${config.APP_NAME}/login`);
+        }
     }
     render() {
         return null

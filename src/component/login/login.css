@@ -1,0 +1,33 @@
+.sign-up-wrap{
+  background-color: #36465d;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh);
+}
+.sign-up-wrap h3{
+color: #fff;
+margin-bottom: 20px;
+}
+.sign-up-wrap form{
+  min-width: 300px;
+  border-radius:5px;
+  background-color: rgba(0,0,0,.3);
+  border: 1px solid #fff;
+  color: #fff;
+}
+.sign-up-wrap form input:-webkit-autofill{
+box-shadow: 0 0 0 1000px white inset !important;
+-webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+.sign-up-wrap .btn-link,
+.sign-up-wrap .btn-link:hover{
+  color: #fff;
+}
+.sign-up-wrap form .btn-outline-secondary{
+color: #fff;
+border-color: #fff;
+}
+.login-change-link{
+  text-decoration: underline;
+}

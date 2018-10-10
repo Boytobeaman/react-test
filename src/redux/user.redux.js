@@ -7,7 +7,7 @@ const LOAD_DATA = 'LOAD_DATA';
 const LOGOUT = 'LOGOUT'
 
 const initState = {
-    isAuth: false,
+    isAuth: true,
     redirectTo: '',
     msg: '',
     user: '',

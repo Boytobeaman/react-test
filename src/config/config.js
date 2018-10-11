@@ -1,5 +1,5 @@
 const config = {
-  APP_NAME: '/KEYWORDS',
+  APP_NAME: '',
   API_URL : '',
   admin_usernames:''
 }

@@ -39,7 +39,7 @@ class Login extends React.Component {
             <div>
                 {(this.props.redirectTo && this.props.redirectTo !== `${config.APP_NAME}/login`) ? <Redirect to={this.props.redirectTo} /> : null}
                 <div className="d-flex justify-content-center align-items-center sign-up-wrap">
-                    <div>
+                    <div className="form-box-wrap">
                         <h3 className="text-center">Project Name</h3>
                         <Form className="p-3">
                             {this.props.msg ? <p className="text-danger font-weight-bold">{this.props.msg}</p> : null}

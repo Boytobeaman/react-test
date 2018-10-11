@@ -7,13 +7,10 @@
 }
 .sign-up-wrap h3{
 color: #fff;
-margin-bottom: 20px;
+margin: 10px 0 5px;
 }
 .sign-up-wrap form{
   min-width: 300px;
-  border-radius:5px;
-  background-color: rgba(0,0,0,.3);
-  border: 1px solid #fff;
   color: #fff;
 }
 .sign-up-wrap form input:-webkit-autofill{
@@ -30,4 +27,9 @@ border-color: #fff;
 }
 .login-change-link{
   text-decoration: underline;
+}
+.form-box-wrap{
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.3);
+  border: 1px solid #fff;
 }

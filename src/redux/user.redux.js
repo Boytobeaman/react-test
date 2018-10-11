@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { config } from '../config/config';
+import Alert from 'react-s-alert';
 
 const AUTH_SUCCESS = 'AUTH_SUCCESS';
 const ERROR_MSG = 'ERROR_MSG';
@@ -52,6 +53,10 @@ export function update(data) {
                     dispatch(errorMsg(res.data.msg))
                 }
             })
+            .catch((res) => {
+                console.log('失败')
+                Alert.error(res.message, {})
+            })
     }
 }
 export function login({ user, pwd }) {
@@ -67,6 +72,10 @@ export function login({ user, pwd }) {
                     dispatch(errorMsg(res.data.msg))
                 }
             })
+            .catch((res) => {
+                console.log('失败')
+                Alert.error(res.message, {})
+            })
     }
 }
 
@@ -76,7 +85,7 @@ export function register({ user, pwd, repeatpwd }) {
         return errorMsg('input pwd')
     }
     if (pwd !== repeatpwd) {
-        return errorMsg("pwd and confirmPwd do not identical!")
+        return errorMsg("Pwd and confirmPwd is NOT identical!")
     }
     return dispatch => {
         axios.post(`${config.API_URL}${config.APP_NAME}/user/register`, { user, pwd })
@@ -86,6 +95,10 @@ export function register({ user, pwd, repeatpwd }) {
                 } else {
                     dispatch(errorMsg(res.data.msg))
                 }
+            })
+            .catch((res) => {
+                console.log('失败')
+                Alert.error(res.message, {})
             })
     }
 }

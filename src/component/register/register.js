@@ -72,7 +72,7 @@ class Register extends React.Component {
                                     onChange={e => this.handleChange('repeatpwd', e)}
                                 />
                             </FormGroup>
-                            <Button outline color="secondary" onClick={this.handleRegister}>Register</Button>
+                            <Button color="danger" onClick={this.handleRegister}>Register</Button>
                             <Button color="link" className="float-right login-change-link" onClick={this.login}>login</Button>
                         </Form>
                     </div>

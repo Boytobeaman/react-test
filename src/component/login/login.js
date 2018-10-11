@@ -60,7 +60,7 @@ class Login extends React.Component {
                                     onChange={e => this.handleChange('pwd', e)}
                                 />
                             </FormGroup>
-                            <Button outline color="secondary" onClick={this.handleLogin}>login</Button>
+                            <Button color="danger" onClick={this.handleLogin}>login</Button>
                             <Button color="link" className="float-right login-change-link" onClick={this.register}>register</Button>
                         </Form>
                     </div>

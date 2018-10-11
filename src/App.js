@@ -19,6 +19,7 @@ import Register from './component/register/register';
 import AuthRoute from './component/authroute/authroute';
 import Dashboard from './component/dashboard/dashboard';
 import MenuOne from './component/menuOne/menuOne';
+import SurveyComponent from './component/survey/survey';
 
 const MenuTwo = () => <h3>Menu two content</h3>;
 
@@ -36,6 +37,11 @@ const routes = [
   {
     path: `${config.APP_NAME}/menuTwo`,
     component: MenuTwo,
+    exact: true
+  },
+  {
+    path: `${config.APP_NAME}/survey`,
+    component: SurveyComponent,
     exact: true
   }
 ]

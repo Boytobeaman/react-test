@@ -55,6 +55,9 @@ class Header extends Component {
               <NavItem>
                 <NavLink to={`${config.APP_NAME}/menuTwo`} className='nav-link'>Menu two</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink to={`${config.APP_NAME}/survey`} className='nav-link'>Survey</NavLink>
+              </NavItem>
             </Nav>
             <Nav navbar>
               <UncontrolledDropdown nav inNavbar >

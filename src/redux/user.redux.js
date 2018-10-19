@@ -64,10 +64,11 @@ export function login({ user, pwd }) {
         return errorMsg("you must input username and pwd")
     }
     return dispatch => {
-        axios.post(`${config.API_URL}${config.APP_NAME}/user/login`, { user, pwd })
+        debugger;
+        axios.post(`${config.API_URL}${config.APP_NAME}/auth/local`, { identifier: user, password: pwd })
             .then(res => {
-                if (res.status === 200 && res.data.code === 0) {
-                    dispatch(authSuccess(res.data.data))
+                if (res.status === 200) {
+                    dispatch(authSuccess(res.data.user))
                 } else {
                     dispatch(errorMsg(res.data.msg))
                 }

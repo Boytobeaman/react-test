@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../../redux/user.redux';
+import { login,fake_login } from '../../redux/user.redux';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './login.css';
@@ -33,6 +33,7 @@ class Login extends React.Component {
     }
     handleLogin() {
         this.props.login(this.state)
+        // this.props.fake_login(this.state)
     }
     render() {
         return (
@@ -75,6 +76,7 @@ class Login extends React.Component {
 export default connect(
     state => state.user,
     {
-        login
+        login,
+        fake_login
     }
 )(Login);

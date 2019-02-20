@@ -1,6 +1,6 @@
 const config = {
   APP_NAME: '',
-  API_URL : 'http://localhost:1314',
+  API_URL : 'http://customer.50d.top',
   admin_usernames:''
 }
 

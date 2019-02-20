@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { config } from '../config/config';
+import { getCookie,setCookie } from '../utils';
 import Alert from 'react-s-alert';
 
 const AUTH_SUCCESS = 'AUTH_SUCCESS';
@@ -59,16 +60,18 @@ export function update(data) {
             })
     }
 }
+
 export function login({ user, pwd }) {
     if (!user || !pwd) {
         return errorMsg("you must input username and pwd")
     }
+    debugger;
     return dispatch => {
-        debugger;
         axios.post(`${config.API_URL}${config.APP_NAME}/auth/local`, { identifier: user, password: pwd })
             .then(res => {
                 if (res.status === 200) {
                     dispatch(authSuccess(res.data.user))
+                    setCookie('jwt',res.data.jwt,1)
                 } else {
                     dispatch(errorMsg(res.data.msg))
                 }
@@ -77,6 +80,14 @@ export function login({ user, pwd }) {
                 console.log('失败')
                 Alert.error(res.message, {})
             })
+    }
+}
+export function fake_login({ user, pwd }) {
+    if (!user || !pwd) {
+        return errorMsg("you must input username and pwd")
+    }
+    return dispatch => {
+        dispatch(authSuccess({email:"test@apple.com",username:"Steve Jobs"}))
     }
 }
 

@@ -65,13 +65,27 @@ export function login({ user, pwd }) {
     if (!user || !pwd) {
         return errorMsg("you must input username and pwd")
     }
-    debugger;
     return dispatch => {
         axios.post(`${config.API_URL}${config.APP_NAME}/auth/local`, { identifier: user, password: pwd })
             .then(res => {
                 if (res.status === 200) {
-                    dispatch(authSuccess(res.data.user))
+                    
                     setCookie('jwt',res.data.jwt,1)
+                    axios.get(`${config.API_URL}${config.APP_NAME}/users/me`,{
+                        headers: {
+                           Authorization: 'Bearer ' + getCookie("jwt") //the token is a variable which holds the token
+                        }
+                    })
+                    .then(response => {
+                        // Handle success.
+                        dispatch(authSuccess(response.data))
+                        console.log('Well done, here is the list of posts: ', response.data);
+                    })
+                    .catch(error => {
+                        // Handle error.
+                        console.log('An error occurred:', error);
+                    });
+                    
                 } else {
                     dispatch(errorMsg(res.data.msg))
                 }

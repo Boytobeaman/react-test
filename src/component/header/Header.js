@@ -50,7 +50,7 @@ class Header extends Component {
                 <NavLink to={`${config.APP_NAME}/dashboard`} className='nav-link'>Dashboard</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={`${config.APP_NAME}/menuOne`} className='nav-link'>Menu one</NavLink>
+                <NavLink to={`${config.APP_NAME}/menuOne`} className='nav-link'>Inquiry</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to={`${config.APP_NAME}/menuTwo`} className='nav-link'>Menu two</NavLink>
@@ -62,7 +62,7 @@ class Header extends Component {
             <Nav navbar>
               <UncontrolledDropdown nav inNavbar >
                 <DropdownToggle nav caret>
-                {this.props.user.user}
+                {this.props.user.email}
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem onClick={this.handleLogout}>

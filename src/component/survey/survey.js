@@ -6,6 +6,8 @@ import axios from 'axios';
 import { config } from '../../config/config';
 import _ from 'lodash';
 
+import dyLoadBootstrapComponent from '../dyLoadBootstrapComponent'
+
 import Header from '../header/Header';
 import '../../assets/css/survey.css';
 
@@ -87,4 +89,4 @@ export default connect(
         testValue: state.test.testValue
     })
     ,null
-)(SurveyComponent);
+)(dyLoadBootstrapComponent(SurveyComponent));

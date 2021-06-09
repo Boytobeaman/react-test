@@ -7789,6 +7789,11 @@ multicast-dns@^6.0.1:
     dns-packet "^1.3.1"
     thunky "^1.0.2"
 
+mynpmlu@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/mynpmlu/-/mynpmlu-1.0.3.tgz#a8e52800bc6fd909307aebfbd36834b475c1a44e"
+  integrity sha512-7qGnh4JHSY3Non7/etir3dEG1VOp73vHOuWuQImqeWpD6uJOC8mc4WsTnDFAMGYeiE1LF9Z22giLpfizF3NTsw==
+
 nan@^2.12.1, nan@^2.13.2:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"

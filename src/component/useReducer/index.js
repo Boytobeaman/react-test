@@ -2,7 +2,6 @@ import React, { useReducer, useEffect, forwardRef } from 'react';
 import { login, fake_login } from '../../redux/user.redux';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import useDeepCompareEffect from "react-use/lib/useDeepCompareEffect";
 
 import { Checkbox } from 'antd';
 import { config } from '../../config/config';

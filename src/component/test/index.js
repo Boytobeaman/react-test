@@ -16,6 +16,8 @@ function Index (props){
 
   return (
     <div>
+      {/* error boundary 可以捕获到props.a 不存在 */}
+      {props.a.b}
       Test page
     </div>
   )
